@@ -3,9 +3,9 @@ import * as renderer from 'react-test-renderer';
 
 import Root from '.';
 
-it('Renders root', function () {
+it('Renders root', () => {
   const component = renderer.create(
-    <Root />
+    <Root />,
   );
 
   expect(component).toMatchSnapshot();

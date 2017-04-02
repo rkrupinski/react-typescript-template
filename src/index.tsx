@@ -9,5 +9,5 @@ styles.use();
 
 render(
   <Root />,
-  document.querySelector('#app')
+  document.querySelector('#app'),
 );
