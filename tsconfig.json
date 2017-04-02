@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "paths": {
+      "*": [
+        "*",
+        "src/*"
+      ]
+    },
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

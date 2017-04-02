@@ -1,0 +1,61 @@
+{
+  "name": "react-typescript-template",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "jest",
+    "lint": "jshint .",
+    "validate": "npm ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkrupinski/react-typescript-template.git"
+  },
+  "author": "Rafał Krupiński",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "@types/react": "^15.0.18",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-test-renderer": "^15.4.3",
+    "awesome-typescript-loader": "^3.1.2",
+    "clean-webpack-plugin": "^0.1.14",
+    "css-loader": "^0.27.3",
+    "html-webpack-plugin": "^2.26.0",
+    "jest": "^19.0.2",
+    "precommit-hook": "^3.0.0",
+    "react-test-renderer": "^15.4.2",
+    "style-loader": "^0.13.2",
+    "ts-jest": "^19.0.6",
+    "typescript": "^2.2.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "styled-components": "^1.4.4"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleDirectories": [
+      "<rootDir>/src",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "pre-commit": [
+    "test"
+  ]
+}
