@@ -2,5 +2,4 @@
 
 TODO:
 
-* tslint
 * HMR
