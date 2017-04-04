@@ -12,7 +12,13 @@
     },
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es5"
+    "target": "es5",
+    "lib": [
+      "es2015.promise",
+      "dom",
+      "es5",
+      "scripthost"
+    ]
   },
   "exclude": [
     "node_modules"
