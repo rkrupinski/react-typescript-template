@@ -6,7 +6,8 @@
     "start": "webpack-dev-server",
     "build": "webpack",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "validate": "exit 0"
   },
   "repository": {
     "type": "git",

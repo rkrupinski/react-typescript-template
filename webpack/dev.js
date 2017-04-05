@@ -29,6 +29,4 @@ module.exports = {
   performance: {
     hints: false,
   },
-
-  devtool: 'cheap-module-eval-source-map',
 };
