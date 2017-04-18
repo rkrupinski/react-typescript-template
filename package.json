@@ -6,8 +6,7 @@
     "start": "webpack-dev-server",
     "build": "webpack",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest",
-    "validate": "exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,7 @@
     "css-loader": "^0.27.3",
     "html-webpack-plugin": "^2.26.0",
     "jest": "^19.0.2",
-    "precommit-hook": "^3.0.0",
+    "pre-commit": "^1.2.2",
     "react-test-renderer": "^15.4.2",
     "style-loader": "^0.13.2",
     "ts-jest": "^19.0.6",
