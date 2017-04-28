@@ -16,7 +16,7 @@ if (module.hot) {
   });
 }
 
-function render(RootComponent: typeof React.Component): void {
+function render(RootComponent: React.ComponentClass<any>): void {
   ReactDOM.render(
     (
       <AppContainer>
