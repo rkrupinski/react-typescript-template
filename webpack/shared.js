@@ -22,6 +22,20 @@ module.exports = {
         ],
       },
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'tslint-loader',
+            options: {
+              emitErrors: true,
+              typeCheck: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader/useable',
