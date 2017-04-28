@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Root from '.';
+import { Root } from '.';
 
 it('Renders root', () => {
   const component = renderer.create(

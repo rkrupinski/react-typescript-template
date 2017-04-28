@@ -1,10 +1,9 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as styles from 'normalize.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import styles from 'normalize.css';
 import { AppContainer } from 'react-hot-loader';
 
-import './declarations';
-import Root from './components/root';
+import { Root } from './components/root';
 
 styles.use();
 
@@ -16,7 +15,7 @@ if (module.hot) {
   });
 }
 
-function render(RootComponent: React.ComponentClass<any>): void {
+function render(RootComponent: typeof Root): void {
   ReactDOM.render(
     (
       <AppContainer>

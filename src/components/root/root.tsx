@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 
-import Btn from 'components/btn';
+import { Btn } from 'components/btn';
 
-export default class Root extends Component<{}, {}> {
+export class Root extends Component<{}, {}> {
   public render() {
     return (
       <Btn onClick={this.foo}>Hello!</Btn>
@@ -26,5 +25,4 @@ export default class Root extends Component<{}, {}> {
     // tslint:disable-next-line:no-console
     console.log(Object.keys(rest));
   }
-
 }

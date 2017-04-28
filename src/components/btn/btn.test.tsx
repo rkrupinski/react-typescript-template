@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Btn from '.';
+import { Btn } from '.';
 
 it('Renders btn', () => {
   ['Lorem', 'Ipsum', '💩'].forEach((text) => {
