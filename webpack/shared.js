@@ -2,7 +2,10 @@ const { resolve } = require('path');
 const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
-  context: resolve(__dirname, '..', 'src'),
+  entry: [
+    'react-hot-loader/patch',
+    resolve(__dirname, '..', 'src', 'index.tsx'),
+  ],
 
   resolve: {
     alias: {

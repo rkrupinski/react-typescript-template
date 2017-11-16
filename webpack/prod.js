@@ -5,8 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
-  entry: resolve(__dirname, '..', 'src', 'index.tsx'),
-
   output: {
     path: resolve(__dirname, '..', 'build'),
     filename: '[chunkhash].[name].js',

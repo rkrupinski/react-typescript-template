@@ -4,11 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    resolve(__dirname, '..', 'src', 'index.tsx'),
-  ],
-
   output: {
     path: resolve(__dirname, '..', 'build'),
     filename: '[name].js',
