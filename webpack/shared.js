@@ -1,13 +1,20 @@
 const { resolve } = require('path');
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
   context: resolve(__dirname, '..', 'src'),
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@src': resolve(__dirname, '..', 'src'),
+    },
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     modules: [
       resolve(__dirname, '..', 'src'),
       'node_modules',
+    ],
+    plugins: [
+      new TsConfigPathsPlugin(),
     ],
   },
 
@@ -49,6 +56,4 @@ module.exports = {
       },
     ],
   },
-
-  devtool: 'source-map',
 };

@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from 'normalize.css';
 import { AppContainer } from 'react-hot-loader';
+import { normalize } from 'polished';
+import { injectGlobal } from 'styled-components';
 
-import { Root } from './components/root';
+import Root from '@src/components/root';
 
-styles.use();
+injectGlobal`${normalize() as any}`; // tslint:disable-line
 
 render(Root);
 
 if (module.hot) {
-  module.hot.accept('./components/root', () => {
+  module.hot.accept('@src/components/root', () => {
     render(Root);
   });
 }
 
-function render(RootComponent: typeof Root): void {
+function render(RootComponent: React.ComponentClass) {
   ReactDOM.render(
     (
       <AppContainer>

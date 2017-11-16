@@ -1,7 +1,9 @@
 {
-  "extends": "tslint:latest",
+  "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "quotemark": [true, "single"],
-    "ordered-imports": false
+    "no-implicit-dependencies": false, // https://github.com/palantir/tslint/issues/3364
+    "no-submodule-imports": [true, "@src"],
+    "ordered-imports": false,
+    "quotemark": [true, "single"]
   }
 }

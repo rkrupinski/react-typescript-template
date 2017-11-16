@@ -2,22 +2,15 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
-  entry: {
-    main: resolve(__dirname, '..', 'src', 'index.tsx'),
-    vendor: [
-      'react',
-      'react-dom',
-      'react-hot-loader',
-      'normalize.css',
-      'styled-components',
-    ],
-  },
+  entry: resolve(__dirname, '..', 'src', 'index.tsx'),
 
   output: {
     path: resolve(__dirname, '..', 'build'),
     filename: '[chunkhash].[name].js',
+    chunkFilename: '[chunkhash].[name].js',
     publicPath: '/',
   },
 
@@ -31,14 +24,16 @@ module.exports = {
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: [
-        'vendor',
-        'manifest'
-      ],
+      name: 'vendor',
+      minChunks: function (module) {
+        return module.context && module.context.indexOf('node_modules') !== -1;
+      },
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new MinifyPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '..' ,'src', 'index.ejs'),
       title: 'react-typescript-template',
@@ -46,5 +41,8 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
+    ...process.env.ANALYZE_BUNDLE ?
+        [ new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)() ] :
+        [],
   ],
 };
